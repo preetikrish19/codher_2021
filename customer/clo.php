@@ -60,7 +60,8 @@
     <img src="saree.jpg" alt="image" class="image" >
      <div class="overlay"><div class="text1"><p><b>Product name : Saree</b></p>
      <p><b>Price : Rs.1000</b></p>
-     <p><b>Seller name : XYZ textiles</b></p><a href="#"><i class="fa fa-instagram fa-3x"></i></a>
+     <p><b>Seller name : XYZ textiles</b></p>
+     <p><b>Follow us on :  </b><a href="#"><img src="insta.jpg" height="50px" width="50px"></a></p>
      <p><b>This is a pink saree with blue border</b></p>
      <button class="add button1">+ ADD</button> </div>
      </div>
