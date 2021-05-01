@@ -25,8 +25,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if($con->query($sql))
   {
     //echo "New user inserted";
-    //echo "<script>alert('Posted');</script>";
-    //echo "<script>window.location.href='org_posts.php'</script>";
+    echo "<script>alert('Posted');</script>";
+    echo "<script>window.location.href='org_posts.php'</script>";
   }
   else{
     echo "Error: " . $sql . "<br>" . $con->error;

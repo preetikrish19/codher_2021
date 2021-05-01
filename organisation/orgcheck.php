@@ -10,7 +10,7 @@ session_start();
     if($count == 1){
       $_SESSION["name"] = $name ;
       $_SESSION['login'] = 1;
-      echo "<script>window.location.href='access.php'</script>";
+      echo "<script>window.location.href='org_posts.php'</script>";
     }
     else {
       echo "Invalid username or password";
