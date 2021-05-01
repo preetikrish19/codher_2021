@@ -1,11 +1,9 @@
 <?php
-
 session_start();
 include('db.php');
-$sql = "SELECT * FROM products WHERE category = 1";
+$sql = "SELECT * FROM products WHERE category = 4";
 $result = mysqli_query($con, $sql);
 $details = mysqli_fetch_all($result, MYSQLI_ASSOC);
-//print_r($details);
 ?>
 <!DOCTYPE html>
 <html>
@@ -14,12 +12,38 @@ $details = mysqli_fetch_all($result, MYSQLI_ASSOC);
 <link rel="stylesheet" href="old.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
-
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<script>
+$(document).ready(function(){
+  $("form").on("submit", function(event){
+      event.preventDefault();
+
+      var formValues= $(this).serialize();
+      console.log(formValues);
+
+      $.post("addcart.php", formValues, function(data){
+          // Display the returned data in browser
+          $("#result").html(data);
+      });
+  });
+  $("#chat").on("submit", function(event){
+      event.preventDefault();
+
+      var formValues= $(this).serialize();
+      console.log(formValues);
+
+      $.post("chat.php", formValues, function(data){
+          // Display the returned data in browser
+          $("#result2").html(data);
+      });
+  });
+});
+
+</script>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -63,69 +87,115 @@ $details = mysqli_fetch_all($result, MYSQLI_ASSOC);
   </div>
 </nav>
 <div class="new">
+  <b><div id="result" style="margin-left: 35em; color: green"></div></b>
 <div class="row">
-  <?php foreach($details as $detail){ ?>
+  <?php foreach($details as $detail){
+
+  ?>
   <div class="column col-lg-4 col-sm-12 col-md-6">
+    <form class="" action="addcart.php" method="post">
     <div class="c">
-    <img src="../imgs/<?php echo $detail['image'];?>" alt="image" class="image">
+    <img src="imgs/<?php echo $detail['image'];?>" alt="image" class="image" >
      <div class="overlay"><div class="text1"><p><b>Product name : <?php echo $detail['prod_name'];?></b></p>
      <p><b>Price : Rs.<?php echo $detail['price'];?></b></p>
-     <p><b>Seller name : <?php echo $detail['org_name'];?></b></p>
-     <p><b>Follow us on :  </b><a href="#"><img src="insta.jpg" height="50px" width="50px"></a></p>
-     <p><b><?php echo $detail['description'];?></b></p>
-     <button class="add button1">+ ADD</button></div>
+     <p><b>Seller name : <?php echo $detail['org_name'];?></b></p><a href="<?php echo $detail['instagram'];?>"><i class="fa fa-instagram fa-1x"></i></a><br>
+     <p><b>Number of items:<input type="number" min="1" max="100" name="noi" value="1"></b></p>
+     <p><b><?php echo $detail['description'];?> </b></p>
+     <input type="hidden" name="prod_name" value="<?php echo $detail['prod_name'];?>">
+     <input type="hidden" name="prod_price" value="<?php echo $detail['price'];?>">
+     <input type="hidden" name="org_name" value="<?php echo $detail['org_name'];?>">
+     <input type="hidden" name="cust_name" value="<?php echo $_SESSION['cust_name']; ?>">
+     <input type="hidden" name="cust_email" value="<?php echo $_SESSION['email'];?>">
+     <input type="submit" name="submit" value="+ADD" class="add button1">
+   </form>
+   <button style="margin-left: 10em; padding: 1em" type="button" class="btn btn-primary add button1" data-toggle="modal" data-target="#exampleModalLong">CHAT</button>
+
+     </div>
      </div>
     </div>
   </div>
-  <?php } ?>
+  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle"><?php echo $detail['org_name'];?></h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <?php
+          $custname = $_SESSION['cust_name'];
+          $orgname = $detail['org_name'];
+          $sql2= "SELECT * FROM chat WHERE cust_name='$custname' AND org_name='$orgname' ORDER BY times";
+          $result2 = mysqli_query($con, $sql2);
+          $details2 = mysqli_fetch_all($result2, MYSQLI_ASSOC);
+          print_r($details2);
+        ?>
+        <div class="modal-body">
+          <form id="chat" action="chat.php" method="post">
+            <input type="hidden" name="org_name" value="<?php echo $detail['org_name'];?>">
+            <textarea name="msg" rows="3" cols="55"></textarea>
+            <button type="submit" class="btn btn-primary">Send</button>
+            </form>
+        </div>
+        <div class="modal-footer">
+
+          <div id="result2"></div>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+        </div>
+      </div>
+    </div>
+  </div>
+<?php } ?>
 </div>
 
 <!--
   <div class="column col-lg-4 col-sm-12 col-md-6">
     <div class="c">
-    <img src="earring.jpg" alt="image" class="image">
+    <img src="book.jpg" alt="image" class="image">
     <div class="overlay"><div class="text1"> DETAILS here</div>
     </div>
   </div>
 </div>
   <div class="column col-lg-4 col-sm-12 col-md-6">
     <div class="c">
-    <img src="earring.jpg" alt="image" class="image">
+    <img src="book.jpg" alt="image" class="image">
    <div class="overlay"><div class="text1"> DETAILS here</div>
    </div>
   </div>
   </div>
   <div class="column col-lg-4 col-sm-12 col-md-6">
     <div class="c">
-      <img src="earring.jpg" alt="image" class="image">
-   <div class="overlay"><div class="text1">DETAILS here</div>
+      <img src="book.jpg" alt="image" class="image">
+   <div class="overlay"><div class="text1"> DETAILS here</div>
    </div>
   </div>
 </div>
   <div class="column col-lg-4 col-sm-12 col-md-6">
     <div class="c">
-    <img src="earring.jpg" alt="image" class="image" >
+    <img src="book.jpg" alt="image" class="image" >
      <div class="overlay"><div class="text1"> DETAILS here </div>
     </div>
   </div>
 </div>
  <div class="column col-lg-4 col-sm-12 col-md-6">
     <div class="c">
-    <img src="earring.jpg" alt="image"  class="image">
+    <img src="book.jpg" alt="image"  class="image">
     <div class="overlay"><div class="text1"> DETAILS here</div>
     </div>
   </div>
   </div>
   <div class="column col-lg-4 col-sm-12 col-md-6">
     <div class="c">
-  <img src="earring.jpg" alt="image"  class="image">
+  <img src="book.jpg" alt="image"  class="image">
    <div class="overlay"><div class="text1"> DETAILS here</div>
    </div>
   </div>
   </div>
   <div class="column col-lg-4 col-sm-12 col-md-6">
     <div class="c">
-  <img src="earring.jpg" alt="image" class="image">
+  <img src="book.jpg" alt="image" class="image">
    <div class="overlay">
      <div class="text1"> DETAILS here</div>
    </div>
@@ -133,11 +203,10 @@ $details = mysqli_fetch_all($result, MYSQLI_ASSOC);
   </div>
   <div class="column col-lg-4 col-sm-12 col-md-6">
     <div class="c">
-  <img src="earring.jpg" alt="image"  class="image">
+  <img src="book.jpg" alt="image"  class="image">
    <div class="overlay"><div class="text1"> DETAILS here</div>
    </div>
   </div>
-</div>
 </div>
 </div>
 -->
