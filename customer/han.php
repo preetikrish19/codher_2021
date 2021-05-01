@@ -68,7 +68,7 @@ $details = mysqli_fetch_all($result, MYSQLI_ASSOC);
      <div class="overlay"><div class="text1"><p><b>Product name : <?php echo $detail['prod_name'];?></b></p>
      <p><b>Price : Rs.<?php echo $detail['price'];?></b></p>
      <p><b>Number of items:<input type="number" min="1" max="100" name="noi" value="1"></b></p>
-     <p><b><?php echo $detail['description'];?> </b></p>
+    
      <input type="hidden" name="prod_name" value="<?php echo $detail['prod_name'];?>">
      <input type="hidden" name="prod_price" value="<?php echo $detail['price'];?>">
      <input type="hidden" name="org_name" value="<?php echo $detail['org_name'];?>">
