@@ -7,7 +7,6 @@ $result = mysqli_query($con, $sql);
 $details = mysqli_fetch_all($result, MYSQLI_ASSOC);
 $i =1;
 $total = 0;
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -170,6 +169,7 @@ $(document).ready(function(){
     <td><button class="button button1">DELETE</button></td>
   </tr>
 -->
+
 </table>
 <h4><div class="b">Total: Rs.<?php echo $total; ?> </div></h4>
 <form action="buy.php" method="post" id="buy">
