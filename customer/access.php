@@ -1,7 +1,8 @@
 <?php
+
 session_start();
-include('db.php');
 $cat = 1;
+include('db.php');
 $sql = "SELECT * FROM products WHERE category = 1";
 $result = mysqli_query($con, $sql);
 $details = mysqli_fetch_all($result, MYSQLI_ASSOC);
