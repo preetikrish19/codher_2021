@@ -1,11 +1,3 @@
-<?php
-session_start();
-//include('db.php');
-$cat=3;
-$sql = "SELECT * FROM products WHERE category = 4";
-//$result = mysqli_query($con, $sql);
-//$details = mysqli_fetch_all($result, MYSQLI_ASSOC);
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,22 +10,6 @@ $sql = "SELECT * FROM products WHERE category = 4";
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-<script>
-$(document).ready(function(){
-  $("form").on("submit", function(event){
-      event.preventDefault();
-
-      var formValues= $(this).serialize();
-      console.log(formValues);
-
-      $.post("addcart.php", formValues, function(data){
-          // Display the returned data in browser
-          $("#result").html(data);
-      });
-  });
-});
-
-</script>
 </head>
 <body>
 <style>
