@@ -1,7 +1,6 @@
 <?php
 
 session_start();
-$cat = 1;
 include('db.php');
 $sql = "SELECT * FROM products WHERE category = 1";
 $result = mysqli_query($con, $sql);
@@ -21,6 +20,11 @@ $details = mysqli_fetch_all($result, MYSQLI_ASSOC);
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+<style>
+  body{
+    background-color: black; 
+  }
+</style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -68,7 +72,7 @@ $details = mysqli_fetch_all($result, MYSQLI_ASSOC);
   <?php foreach($details as $detail){ ?>
   <div class="column col-lg-4 col-sm-12 col-md-6">
     <div class="c">
-    <img src="imgs/<?php echo $detail['image'];?>" alt="image" class="image">
+    <img src="../imgs/<?php echo $detail['image'];?>" alt="image" class="image">
      <div class="overlay"><div class="text1"><p><b>Product name : <?php echo $detail['prod_name'];?></b></p>
      <p><b>Price : Rs.<?php echo $detail['price'];?></b></p>
      <p><b>Seller name : <?php echo $detail['org_name'];?></b></p>

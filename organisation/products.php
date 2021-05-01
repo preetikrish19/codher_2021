@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $category = $con->real_escape_string($_POST['category']);
   $file_name = $_FILES['image']['name'];
   $file_tmp = $_FILES['image']['tmp_name'];
-  if(move_uploaded_file($file_tmp,"./imgs/".$file_name))
+  if(move_uploaded_file($file_tmp,"../imgs/".$file_name))
   {
     //echo "uploaded image";
   }
