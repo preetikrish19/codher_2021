@@ -12,7 +12,7 @@
 }
 body
 {
-  background-color:rgb(19, 95, 139);
+  background-color:white;
 }
 
 input[type=text], select, textarea {
@@ -46,7 +46,7 @@ input[type=submit]:hover {
     width:60%;
     border: solid black 5px;
   border-radius: 5px;
-  background-color: lightblue;
+  background-color: lightgrey;
   padding: 20px;
   margin-left:20%;
   margin-top:5%;
