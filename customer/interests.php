@@ -66,7 +66,15 @@
     <img src="earring.jpg" alt="image" class="image" >
      <div class="overlay"><div class="text1"><p><b>Product name : EARRINGS</b></p>
      <p><b>Price : Rs.50</b></p>
-     <p><b>Seller name : ABC jewellery</b></p><a href="#"><i class="fa fa-instagram fa-3x"></i></a>
+     <p><b>Number of items:<input type="number" min="1" max="100" name="noi" value="1"></b></p>
+     <p><b><?php echo $detail['description'];?> </b></p>
+     <input type="hidden" name="prod_name" value="<?php echo $detail['prod_name'];?>">
+     <input type="hidden" name="prod_price" value="<?php echo $detail['price'];?>">
+     <input type="hidden" name="org_name" value="<?php echo $detail['org_name'];?>">
+     <input type="hidden" name="cust_name" value="<?php echo $_SESSION['cust_name']; ?>">
+     <input type="hidden" name="cust_email" value="<?php echo $_SESSION['email'];?>">
+     <p><b>Seller name : ABC jewellery</b></p>
+     <p><b>Follow us on :  </b><a href="#"><img src="insta.jpg" height="50px" width="50px"></a></p>
      <p><b>This is a black metal earring with </b></p>
      <button class="add button1">+ ADD</button> </div>
      </div>

@@ -98,8 +98,6 @@ $(document).ready(function(){
     <img src="imgs/<?php echo $detail['image'];?>" alt="image" class="image" >
      <div class="overlay"><div class="text1"><p><b>Product name : <?php echo $detail['prod_name'];?></b></p>
      <p><b>Price : Rs.<?php echo $detail['price'];?></b></p>
-     <p><b>Seller name : <?php echo $detail['org_name'];?></b></p>
-     <p><b>Follow us on :  </b><a href="<?php echo $detail['instagram'];?>"><img src="insta.jpg" height="50px" width="50px"></a></p><br>
      <p><b>Number of items:<input type="number" min="1" max="100" name="noi" value="1"></b></p>
      <p><b><?php echo $detail['description'];?> </b></p>
      <input type="hidden" name="prod_name" value="<?php echo $detail['prod_name'];?>">
@@ -107,6 +105,8 @@ $(document).ready(function(){
      <input type="hidden" name="org_name" value="<?php echo $detail['org_name'];?>">
      <input type="hidden" name="cust_name" value="<?php echo $_SESSION['cust_name']; ?>">
      <input type="hidden" name="cust_email" value="<?php echo $_SESSION['email'];?>">
+     <p><b>Seller name : <?php echo $detail['org_name'];?></b></p>
+     <p><b>Follow us on :  </b><a href="<?php echo $detail['instagram'];?>"><img src="insta.jpg" height="50px" width="50px"></a></p><br>
      <input type="submit" name="submit" value="+ADD" class="add button1">
    </form>
    <button style="margin-left: 10em; padding: 1em" type="button" class="btn btn-primary add button1" data-toggle="modal" data-target="#exampleModalLong">CHAT</button>
