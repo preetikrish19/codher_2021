@@ -1,10 +1,10 @@
 <?php
 session_start();
-include('db.php');
+//include('db.php');
 $cat=3;
 $sql = "SELECT * FROM products WHERE category = 4";
-$result = mysqli_query($con, $sql);
-$details = mysqli_fetch_all($result, MYSQLI_ASSOC);
+//$result = mysqli_query($con, $sql);
+//$details = mysqli_fetch_all($result, MYSQLI_ASSOC);
 ?>
 <!DOCTYPE html>
 <html>
@@ -46,7 +46,7 @@ body {
 }
 </style>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Help A Hand</a>
+  <a class="navbar-brand" href="#"><img src= "customer/imgs/logo.jpeg" alt="logo"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
