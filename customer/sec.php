@@ -121,7 +121,7 @@ $(document).ready(function(){
      </div>
     </div>
   </div>
-  <div class="modal fade" id="chat<?php echo $detail['prod_id']?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal fade" id="chat<?php echo $detail['prod_id'];?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -145,7 +145,7 @@ $(document).ready(function(){
          <?php } ?>
 
           <form class="chatbox" action="chat.php" method="post">
-            <input type="hidden" name="org_name" value="<?php echo $_SESSION['org_name'];?>">
+            <input type="hidden" name="org_name" value="<?php echo $detail['org_name'];?>">
             <textarea name="msg" rows="3" cols="55"></textarea>
             <input type="submit" class="btn btn-primary" value="SEND">
             </form>
