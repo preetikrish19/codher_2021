@@ -71,7 +71,7 @@ session_start();
 <div class = "grid-child">
     <h1 id="heading">About</h1>
     <p>
-
+    This is a E-commerce and E markering website which mainly focuses on small scale businesses .Here people can buy and sell their products .This creates a great opportunity for the budding businesses.
  </p>
      </div>
 </div>
