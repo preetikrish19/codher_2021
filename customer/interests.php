@@ -5,6 +5,7 @@ $email = $_SESSION['email'];
 $sql = "SELECT * FROM customer WHERE email='$email'";
 $result = mysqli_query($con, $sql);
 $choices = mysqli_fetch_all($result, MYSQLI_ASSOC);
+$i = 1;
 foreach ($choices as $choice) {
   if($choice['choice1']==1)
   {
@@ -67,7 +68,7 @@ foreach ($choices as $choice) {
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#"><img src= "imgs/logo.png" alt="logo"style="width:80px;height:50px"></a>
+  <a class="navbar-brand" href="#"><img src= "customer/imgs/logo(1).png" alt="logo"style="width:80px;height:50px"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -88,13 +89,13 @@ foreach ($choices as $choice) {
           Categories
         </a>
         <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item bg-dark" href="customer/access.php" style="color: white">ACCESSORIES</a>
+          <a class="dropdown-item bg-dark" href="access.php" style="color: white">ACCESSORIES</a>
           <div class="dropdown-divider bg-light"></div>
-          <a class="dropdown-item bg-dark" href="customer/han.php" style="color: white">HANDICRAFTS</a>
+          <a class="dropdown-item bg-dark" href="han.php" style="color: white">HANDICRAFTS</a>
           <div class="dropdown-divider bg-light"></div>
-          <a class="dropdown-item bg-dark" href="customer/clo.php" style="color: white">CLOTHING</a>
+          <a class="dropdown-item bg-dark" href="clo.php" style="color: white">CLOTHING</a>
           <div class="dropdown-divider bg-light"></div>
-          <a class="dropdown-item bg-dark" href="customer/sec.php" style="color: white">SECOND HAND BOOKS</a>
+          <a class="dropdown-item bg-dark" href="sec.php" style="color: white">SECOND HAND BOOKS</a>
         </div>
       </li>
       <li>
@@ -109,27 +110,67 @@ foreach ($choices as $choice) {
 <h1 class="st" style="color:black;">YOUR INTERESTS...</h1>
 <div class="new">
 <div class="row">
-  <?php foreach ($details1 as $detail1) {?>
+  <?php foreach ($details1 as $detail1) {
+      if($i == 4)
+      {
+        break;
+      }
+      else{
+    ?>
   <div class="column col-lg-4 col-sm-12 col-md-6">
     <div class="c">
-    <img src="../imgs/<?php echo $detail['image'];?>" alt="image" class="image">
-     <div class="overlay"><div class="text1"><p><b>Product name : <?php echo $detail['prod_name'];?></b></p>
-     <p><b>Price : Rs.<?php echo $detail['price'];?></b></p>
+    <img src="../imgs/<?php echo $detail1['image'];?>" alt="image" class="image">
+     <div class="overlay"><div class="text1"><p><b>Product name : <?php echo $detail1['prod_name'];?></b></p>
+     <p><b>Price : Rs.<?php echo $detail1['price'];?></b></p>
      <p><b>Number of items:<input type="number" min="1" max="100" name="noi" value="1"></b></p>
-     <p><b><?php echo $detail['description'];?> </b></p>
-     <input type="hidden" name="prod_name" value="<?php echo $detail['prod_name'];?>">
-     <input type="hidden" name="prod_price" value="<?php echo $detail['price'];?>">
-     <input type="hidden" name="org_name" value="<?php echo $detail['org_name'];?>">
+     <p><b><?php echo $detail1['description'];?> </b></p>
+     <input type="hidden" name="prod_name" value="<?php echo $detail1['prod_name'];?>">
+     <input type="hidden" name="prod_price" value="<?php echo $detail1['price'];?>">
+     <input type="hidden" name="org_name" value="<?php echo $detail1['org_name'];?>">
      <input type="hidden" name="cust_name" value="<?php echo $_SESSION['cust_name']; ?>">
      <input type="hidden" name="cust_email" value="<?php echo $_SESSION['email'];?>">
-     <p><b>Seller name : <?php echo $detail['org_name'];?></b></p>
+     <p><b>Seller name : <?php echo $detail1['org_name'];?></b></p>
      <p><b>Follow us on :  </b><a href="#"><img src="insta.jpg" height="50px" width="50px"></a></p>
-     <p><b><?php echo $detail['description'];?></b></p>
+     <p><b><?php echo $detail1['description'];?></b></p>
      <button class="add button1">+ ADD</button></div>
      </div>
     </div>
   </div>
-  <?php } ?>
+<?php }
+$i =$i+1;
+}
+$i=1;
+foreach ($details2 as $detail2){
+  if($i == 4)
+  {
+    break;
+  }
+  else{
+?>
+<div class="column col-lg-4 col-sm-12 col-md-6">
+  <div class="c">
+  <img src="../imgs/<?php echo $detail2['image'];?>" alt="image" class="image">
+   <div class="overlay"><div class="text1"><p><b>Product name : <?php echo $detail2['prod_name'];?></b></p>
+   <p><b>Price : Rs.<?php echo $detail2['price'];?></b></p>
+   <p><b>Number of items:<input type="number" min="1" max="100" name="noi" value="1"></b></p>
+   <p><b><?php echo $detail2['description'];?> </b></p>
+   <input type="hidden" name="prod_name" value="<?php echo $detail2['prod_name'];?>">
+   <input type="hidden" name="prod_price" value="<?php echo $detail2['price'];?>">
+   <input type="hidden" name="org_name" value="<?php echo $detail2['org_name'];?>">
+   <input type="hidden" name="cust_name" value="<?php echo $_SESSION['cust_name']; ?>">
+   <input type="hidden" name="cust_email" value="<?php echo $_SESSION['email'];?>">
+   <p><b>Seller name : <?php echo $detail2['org_name'];?></b></p>
+   <p><b>Follow us on :  </b><a href="#"><img src="insta.jpg" height="50px" width="50px"></a></p>
+   <p><b><?php echo $detail2['description'];?></b></p>
+   <button class="add button1">+ ADD</button></div>
+   </div>
+  </div>
+</div>
+<?php }
+$i =$i+1;
+}
+$i=1;
+?>
 </div>
 </div>
 

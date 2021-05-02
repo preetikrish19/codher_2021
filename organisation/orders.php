@@ -22,7 +22,6 @@ $i =1;
 table, th, td {
   border: 3px solid black;
   border-collapse: collapse;
-  align: center;
 }
 th, td {
   padding: 0.3em;
@@ -54,9 +53,10 @@ th, td {
 }
 .t
 {
-    width:10em;
+    width:70%;
     margin-top:3em;
-    margin-left:3em;
+    margin-left:15%;
+    align:center;
 }
 .b{
     text-align:center;
