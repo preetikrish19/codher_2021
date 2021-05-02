@@ -32,7 +32,7 @@ $(document).ready(function(){
           $("#result").html(data);
       });
   });
-  $("#chat").on("submit", function(event){
+  $("#chatbox").on("submit", function(event){
       event.preventDefault();
 
       var formValues= $(this).serialize();
@@ -115,12 +115,12 @@ $(document).ready(function(){
      <input type="hidden" name="cust_email" value="<?php echo $_SESSION['email'];?>">
      <input type="submit" name="submit" value="+ADD" class="add button1">
    </form>
-   <button style="margin-left: 10em; padding: 1em" type="button" class="btn btn-primary add button1" data-toggle="modal" data-target="#exampleModalLong">CHAT</button>
+   <button style="margin-left: 10em; padding: 1em" type="button" class="btn btn-primary add button1" data-toggle="modal" data-target="#chat<?php echo $detail['prod_id'];?>">CHAT</button>
      </div>
      </div>
     </div>
   </div>
-  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal fade" id="chat<?php echo $detail['prod_id']?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -133,18 +133,17 @@ $(document).ready(function(){
         <div class="modal-body">
           <?php
             foreach ($details2 as $detail2) {
-            //print_r($details2);
-            //echo $detail2['sender'];
-            //echo $detail2['times'];
-            //echo $detail2['comment'];
-
+              //print_r($details2);
+              //echo $detail2['sender'];
+              //echo $detail2['times'];
+              //echo $detail2['comment'];
            ?>
            <b><?php echo $detail2['sender'];?></b>
            <div><?php echo $detail2['times'];?></div>
            <div><?php echo $detail2['comment'];?></div>
          <?php } ?>
 
-          <form id="chat" action="chat.php" method="post">
+          <form id="chatbox" action="chat.php" method="post">
             <input type="hidden" name="org_name" value="<?php echo $_SESSION['org_name'];?>">
             <textarea name="msg" rows="3" cols="55"></textarea>
             <input type="submit" class="btn btn-primary" value="SEND">

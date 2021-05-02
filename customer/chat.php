@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $msg = stripcslashes($msg);
   $orgname = stripcslashes($orgname);
   $custname = stripcslashes($custname);
-  $prod_id = stripcslashes($prod_id);
+  //$prod_id = stripcslashes($prod_id);
   if ($_SESSION['login']==0){
   $sql = "INSERT INTO chat (cust_name, org_name, comment,sender,receiver) VALUES('$custname', '$orgname', '$msg', '$custname', '$orgname')";
  }
