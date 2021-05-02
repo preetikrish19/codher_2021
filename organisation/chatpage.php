@@ -1,11 +1,4 @@
-<?php
-session_start();
-include('db.php');
-$org_name = $_SESSION['name'];
-$sql = "SELECT * FROM cart WHERE org_name = '$org_name' AND buy=1";
-$result = mysqli_query($con, $sql);
-$details = mysqli_fetch_all($result, MYSQLI_ASSOC);
-$i =1;
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -42,7 +35,7 @@ th, td {
 }
 
 .button1 {
-  background-color:brown;
+  background-color:lightblue;
   color: black;
   border: 2px solid black;
 }
@@ -53,29 +46,14 @@ th, td {
 }
 .t
 {
-    width:70%;
+    width:60%;
     margin-top:3%;
-    margin-left:15%;
+    margin-left:20%;
 }
 .b{
     text-align:center;
 }
 </style>
-<script>
-$(document).ready(function(){
-  $("#done").on("submit", function(event){
-      event.preventDefault();
-
-      var formValues= $(this).serialize();
-      console.log(formValues);
-
-      $.post("delete.php", formValues, function(data){
-          // Display the returned data in browser
-          $("#result1").html(data);
-      });
-  });
-});
-</script>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -96,7 +74,7 @@ $(document).ready(function(){
         <a class="nav-link" href="org_posts.php">Posts<span class="sr-only">(current)</span></a>
       </li>
       <li>
-        <a class="nav-link" href="chatpage.php">Chat<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="orders.php">Orders<span class="sr-only">(current)</span></a>
       </li>
       <li>
         <a class="nav-link" href="#">Log out <span class="sr-only">(current)</span></a>
@@ -104,54 +82,18 @@ $(document).ready(function(){
     </ul>
   </div>
 </nav>
-<div style="text-align:center;font-size:30px;margin:10px;">YOUR ORDERS...</div>
+<div style="text-align:center;font-size:30px;margin:10px;">YOU HAVE MESSAGES...</div>
 <table class="t">
   <tr>
-    <th>S.NO</th>
+  <th>S.NO</th>
     <th>CUSTOMER NAME</th>
-    <th>PRODUCT NAME</th>
-    <th>QUANTITY</th>
-    <th>PRICE</th>
-    <th>Customer Email</th>
-    <th>STATUS</th>
-  </tr>
-  <?php foreach ($details as $detail) { ?>
-  <tr>
-    <td><?php echo $i; ?></td>
-    <td><?php echo $detail['cust_name']; ?></td>
-    <td><?php echo $detail['prod_name']; ?></td>
-    <td><?php echo $detail['quantity']; ?></td>
-    <td><?php echo $detail['price']; ?></td>
-    <td><?php echo $detail['cust_email']; ?></td>
-    <?php
-    $i = $i +1;
-    ?>
-    <form action="delete.php" method="post" id="done">
-      <input type="hidden" name="cart_id" value="<?php echo $detail['cart_id']; ?>">
-      <td><button type="submit" class="button button1">DONE</button></td>
-      <div id="result1"></div>
-    </form>
-  </tr>
-<?php } ?>
-</table>
-<!--
-  <tr>
-    <td>2</td>
-    <td>SAREE</td>
-    <td>PREETHI</td>
-    <td>RS.1000</td>
-    <td>TRICHY</td>
-    <td><button class="button button1">DONE</button></td>
+    <th>MESSAGES</th>
   </tr>
   <tr>
-    <td>3</td>
-    <td>EARRING</td>
-    <td>HEMA</td>
-    <td>RS.1000</td>
-    <td>SALEM</td>
-    <td><button class="button button1">DONE</button></td>
+  <td>1</td>
+    <td>preethi</td>
+    <td><button class="button button1">VIEW MESSAGE</button></td>
   </tr>
-</table>
--->
+ </table>
 </body>
 </html>
