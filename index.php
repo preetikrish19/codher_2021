@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>HELP A HAND| Home</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="old.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -14,7 +15,7 @@
 <body>
 <style>
 body {
-  background-image: url('customer/imgs/backgroundimg.jpg');
+  background-image: url('imgs/backgroundimg.jpeg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -22,7 +23,7 @@ body {
 }
 </style>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#"><img src= "customer/imgs/logo(1).png" alt="logo"style="width:80px;height:50px"></a>
+  <a class="navbar-brand" href="#"><img src= "imgs/logo.png" alt="logo"style="width:80px;height:50px"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -33,7 +34,7 @@ body {
         <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
       </li>
       <li>
-        <a class="nav-link" href="about.php">About <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#about">About <span class="sr-only">(current)</span></a>
       </li>
       <li>
         <a class="nav-link" href="customer/customer.php">Customer login<span class="sr-only">(current)</span></a>

@@ -49,7 +49,7 @@ $(document).ready(function(){
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Navbar</a>
+<a class="navbar-brand" href="#"><img src= "imgs/logo.png" alt="logo"style="width:80px;height:50px"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -105,8 +105,9 @@ $(document).ready(function(){
     <img src="../imgs/<?php echo $detail['image'];?>" alt="image" class="image" >
      <div class="overlay"><div class="text1"><p><b>Product name : <?php echo $detail['prod_name'];?></b></p>
      <p><b>Price : Rs.<?php echo $detail['price'];?></b></p>
-     <p><b>Seller name : <?php echo $detail['org_name'];?></b></p><a href="<?php echo $detail['instagram'];?>"><i class="fa fa-instagram fa-1x"></i></a><br>
      <p><b>Number of items:<input type="number" min="1" max="100" name="noi" value="1"></b></p>
+     <p><b>Seller name : <?php echo $detail['org_name'];?></b></p>
+     <p><b>Follow us on :  </b><a href="<?php echo $detail['instagram'];?>"><img src="insta.jpg" height="50px" width="50px"></a></p><br>
      <p><b><?php echo $detail['description'];?> </b></p>
      <input type="hidden" name="prod_name" value="<?php echo $detail['prod_name'];?>">
      <input type="hidden" name="prod_price" value="<?php echo $detail['price'];?>">

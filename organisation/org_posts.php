@@ -87,7 +87,7 @@ input[type=submit]:hover {
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">SITE NAME</a>
+  <a class="navbar-brand" href="#"><img src= "imgs/logo.png" alt="logo"style="width:80px;height:50px"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -102,6 +102,9 @@ input[type=submit]:hover {
         </li>
         <li>
           <a class="nav-link" href="orders.php">Orders<span class="sr-only">(current)</span></a>
+        </li>
+        <li>
+          <a class="nav-link" href="chatpage.php">Chat<span class="sr-only">(current)</span></a>
         </li>
         <li>
           <a class="nav-link" href="#">Log out <span class="sr-only">(current)</span></a>
