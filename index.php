@@ -50,9 +50,9 @@ session_start();
     <div class="carousel-item active">
       <img src="imgs/home.png" alt="Los Angeles">
       <div class="carousel-caption">
-        <h3>Buy what you don’t have yet or what you really want,</h3>
-        <h3>which can be mixed with what you already own. Buy only because something</h3>
-        <h3>excites you, not just for the simple act of shopping</h3>
+        <h3 style="color: black">Buy what you don’t have yet or what you really want,</h3>
+        <h3 style="color: black">which can be mixed with what you already own. Buy only because something</h3>
+        <h3 style="color: black">excites you, not just for the simple act of shopping</h3>
       </div>
     </div>
     </div>
