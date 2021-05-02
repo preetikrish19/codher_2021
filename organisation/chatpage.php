@@ -1,4 +1,11 @@
-
+<?php session_start();
+  include('db.php');
+  $sql = "SELECT DISTINCT cust_name FROM chat";
+  $result = mysqli_query($con, $sql);
+  $customers = mysqli_fetch_all($result, MYSQLI_ASSOC);
+  $i=1;
+  print_r($customers);
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,6 +60,19 @@ th, td {
     text-align:center;
 }
 </style>
+<script>
+$("form").on("submit", function(event){
+    event.preventDefault();
+
+    var formValues= $(this).serialize();
+    console.log(formValues);
+
+    $.post("chat.php", formValues, function(data){
+        // Display the returned data in browser
+        $("#result2").html(data);
+    });
+});
+</script>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -83,14 +103,15 @@ th, td {
 </nav>
 <div style="text-align:center;font-size:30px;margin:10px;">YOU HAVE MESSAGES...</div>
 <table class="t">
+  <?php foreach ($customers as $customer) { ?>
   <tr>
-  <th>S.NO</th>
-    <th>CUSTOMER NAME</th>
+  <th>S.no</th>
+    <th>Customer name</th>
     <th>MESSAGES</th>
   </tr>
   <tr>
-  <td>1</td>
-    <td>preethi</td>
+  <td><?php echo $i; ?></td>
+    <td><?php echo $customer['cust_name'];?></td>
     <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
   view message
 </button></td>
@@ -101,13 +122,17 @@ th, td {
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle"></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        ...
+        <form class="chatbox" action="chat.php" method="post">
+          <input type="hidden" name="org_name" value="<?php echo $customer['cust_name'];?>">
+          <textarea name="msg" rows="3" cols="55"></textarea>
+          <input type="submit" class="btn btn-primary" value="SEND">
+        </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -115,6 +140,7 @@ th, td {
     </div>
   </div>
 </div>
+<?php } ?>
 </body>
 
 </html>

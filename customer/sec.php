@@ -149,7 +149,9 @@ $(document).ready(function(){
             <textarea name="msg" rows="3" cols="55"></textarea>
             <input type="submit" class="btn btn-primary" value="SEND">
             </form>
+            <div id="result2">
 
+            </div>
         </div>
         <div class="modal-footer">
 
