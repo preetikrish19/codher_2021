@@ -135,7 +135,7 @@ $(document).ready(function(){
         <div class="modal-body">
 
           <?php
-          print_r($detail);
+          //print_r($detail);
             foreach ($details2 as $detail2) {
             //print_r($details2);
             //echo $detail2['sender'];
