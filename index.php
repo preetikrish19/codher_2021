@@ -18,7 +18,7 @@ if($_SESSION['login'] == 0){
 <body class = "bg-dark">
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#"><img src= "..imgs/logo.jpeg" alt="logo"style="width:80px;height:50px"></a>
+  <a class="navbar-brand" href="#"><img src= "imgs/logo.jpeg" alt="logo"style="width:80px;height:50px"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -50,12 +50,15 @@ if($_SESSION['login'] == 0){
   </ul>
 <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="imgs/homeimg2.jpg" alt="Los Angeles">
+      <img src="imgs/home.png" alt="Los Angeles">
       <div class="carousel-caption">
         <h3>Buy what you don’t have yet or what you really want,</h3>
-        <h3>which can be mixed with what you already own. Buy only because something</h3>
-        <h3>excites you, not just for the simple act of shopping</h3>
+        <h3>which can be mixed with what you already own. Buy only because </h3>
+        <h3> something excites you, not just for the simple act of shopping</h3>
       </div>
+      <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="imgs/homeimg2.png" alt="Los Angeles">
     </div>
     </div>
   </div>
@@ -138,11 +141,17 @@ if($_SESSION['login'] == 0){
   </ul>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="imgs/homeimg.png2" alt="Los Angeles">
+      <img src="imgs/home.png" alt="Los Angeles">
       <div class="carousel-caption">
       <h3>Buy what you don’t have yet or what you really want,</h3>
-        <h3>which can be mixed with what you already own. Buy only because something</h3>
-        <h3>excites you, not just for the simple act of shopping</h3>
+        <h3>which can be mixed with what you already own. Buy only because </h3>
+        <h3> something excites you, not just for the simple act of shopping</h3>
+      </div>
+    </div>
+    <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="imgs/homeimg2.png" alt="Los Angeles">
+      <div class="carousel-caption">
       </div>
     </div>
   </div>
@@ -222,11 +231,16 @@ if($_SESSION['login'] == 0){
    </ul>
    <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="imgs/homeimg2.png" alt="Los Angeles">
+      <img src="imgs/home.png" alt="Los Angeles">
       <div class="carousel-caption">
       <h3>Buy what you don’t have yet or what you really want,</h3>
-        <h3>which can be mixed with what you already own. Buy only because something</h3>
-        <h3>excites you, not just for the simple act of shopping</h3>
+        <h3>which can be mixed with what you already own. Buy only because </h3>
+        <h3> something excites you, not just for the simple act of shopping</h3>
+    </div>
+    <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="imgs/homeimg2.png" alt="Los Angeles">
+  
     </div>
   </div>
    <a class="carousel-control-prev" href="#demo" data-slide="prev">
