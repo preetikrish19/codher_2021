@@ -4,7 +4,7 @@
   $result = mysqli_query($con, $sql);
   $customers = mysqli_fetch_all($result, MYSQLI_ASSOC);
   $i=1;
-  print_r($customers);
+  //print_r($customers);
 ?>
 <!DOCTYPE html>
 <html>
@@ -67,7 +67,7 @@ $("form").on("submit", function(event){
     var formValues= $(this).serialize();
     console.log(formValues);
 
-    $.post("chat.php", formValues, function(data){
+    $.post("../customer/chat.php", formValues, function(data){
         // Display the returned data in browser
         $("#result2").html(data);
     });
@@ -103,36 +103,56 @@ $("form").on("submit", function(event){
 </nav>
 <div style="text-align:center;font-size:30px;margin:10px;">YOU HAVE MESSAGES...</div>
 <table class="t">
-  <?php foreach ($customers as $customer) { ?>
+
   <tr>
-  <th>S.no</th>
+    <th>S.no</th>
     <th>Customer name</th>
     <th>MESSAGES</th>
   </tr>
+  <?php foreach ($customers as $customer) {
+    $orgname = $_SESSION['name'];
+    $custname = $customer['cust_name'];
+    $sql2 = "SELECT * FROM chat WHERE cust_name='$custname' AND org_name='$orgname'";
+    $result2 = mysqli_query($con, $sql2);
+    $details2 = mysqli_fetch_all($result2, MYSQLI_ASSOC);
+    //print_r($details2);
+  ?>
   <tr>
-  <td><?php echo $i; ?></td>
+    <td><?php echo $i; ?></td>
     <td><?php echo $customer['cust_name'];?></td>
-    <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+    <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#chat<?php echo $i;?>">
   view message
 </button></td>
   </tr>
  </table>
 <!-- Modal -->
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+<div class="modal fade" id="chat<?php echo $i;?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle"></h5>
+        <h5 class="modal-title" id="exampleModalLongTitle"><?php echo $customer['cust_name'];?></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
+        <?php
+          foreach ($details2 as $detail2) {
+            //print_r($details2);
+            //echo $detail2['sender'];
+            //echo $detail2['times'];
+            //echo $detail2['comment'];
+         ?>
+         <div><b><?php echo $detail2['sender'];?></b></div>
+         <div><?php echo $detail2['times'];?></div>
+         <div><?php echo $detail2['comment'];?></div>
+       <?php } ?>
         <form class="chatbox" action="chat.php" method="post">
-          <input type="hidden" name="org_name" value="<?php echo $customer['cust_name'];?>">
+          <input type="hidden" name="cust_name" value="<?php echo $customer['cust_name'];?>">
           <textarea name="msg" rows="3" cols="55"></textarea>
           <input type="submit" class="btn btn-primary" value="SEND">
         </form>
+        <div id="result2"></div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

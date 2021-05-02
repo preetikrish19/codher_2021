@@ -94,7 +94,7 @@ $(document).ready(function(){
   <?php foreach($details as $detail){
       $_SESSION['org_name']= $detail['org_name'];
       $orgname = $_SESSION['org_name'];
-      $sql2= "SELECT * FROM chat WHERE sender='$custname' AND receiver='$orgname'";
+      $sql2= "SELECT * FROM chat WHERE cust_name='$custname' AND org_name='$orgname'";
       $result2 = mysqli_query($con, $sql2);
       $details2 = mysqli_fetch_all($result2, MYSQLI_ASSOC);
       //echo $_SESSION['org_name'];
@@ -145,7 +145,7 @@ $(document).ready(function(){
          <?php } ?>
 
           <form class="chatbox" action="chat.php" method="post">
-            <input type="hidden" name="org_name" value="<?php echo $detail['org_name'];?>">
+            <input type="hidden" name="org_name" value="<?php echo $_SESSION['org_name'];?>">
             <textarea name="msg" rows="3" cols="55"></textarea>
             <input type="submit" class="btn btn-primary" value="SEND">
             </form>
