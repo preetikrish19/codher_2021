@@ -14,31 +14,32 @@ session_start();
   <link rel = "stylesheet" href = "styleindex.css">
 </head>
 <body class = "bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#"><img src= "../imgs/logo.png" alt="logo"style="width:80px;height:50px"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#"><img src= "..imgs/logo.jpeg" alt="logo"style="width:80px;height:50px"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li>
-        <a class="nav-link" href="index.php#about">About <span class="sr-only">(current)</span></a>
-      </li>
-      <li>
-        <a class="nav-link" href="customer/customer.php">Customer login<span class="sr-only">(current)</span></a>
-      </li>
-      <li>
-        <a class="nav-link" href="organisation/organisation.php">Organisation login<span class="sr-only">(current)</span></a>
-      </li>
-    </ul>
-  </div>
-</nav>
-
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li>
+          <a class="nav-link" href="#">About <span class="sr-only">(current)</span></a>
+        </li>
+        <li>
+          <a class="nav-link" href="orders.php">Orders<span class="sr-only">(current)</span></a>
+        </li>
+        <li>
+          <a class="nav-link" href="chatpage.php">Chat<span class="sr-only">(current)</span></a>
+        </li>
+        <li>
+          <a class="nav-link" href="../index.php">Log out <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 <body>
 <div id="demo" class="carousel slide" data-ride="carousel">
   <ul class="carousel-indicators">
