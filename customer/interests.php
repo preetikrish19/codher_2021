@@ -1,3 +1,43 @@
+<?php
+session_start();
+include('db.php');
+$email = $_SESSION['email'];
+$sql = "SELECT * FROM customer WHERE email='$email'";
+$result = mysqli_query($con, $sql);
+$choices = mysqli_fetch_all($result, MYSQLI_ASSOC);
+foreach ($choices as $choice) {
+  if($choice['choice1']==1)
+  {
+    $sql1= "SELECT * FROM products WHERE category = 1";
+    $result1 = mysqli_query($con, $sql1);
+    $details1 = mysqli_fetch_all($result1, MYSQLI_ASSOC);
+  }
+  else{}
+  if($choice['choice2']==2)
+  {
+    $sql2= "SELECT * FROM products WHERE category = 2";
+    $result2 = mysqli_query($con, $sql2);
+    $details2 = mysqli_fetch_all($result2, MYSQLI_ASSOC);
+  }
+  else{}
+  if($choice['choice3']==3)
+  {
+    $sql3= "SELECT * FROM products WHERE category = 3";
+    $result3 = mysqli_query($con, $sql3);
+    $details3 = mysqli_fetch_all($result3, MYSQLI_ASSOC);
+  }
+  else{}
+  if($choice['choice4']==3)
+  {
+    $sql4= "SELECT * FROM products WHERE category = 4";
+    $result4 = mysqli_query($con, $sql4);
+    $details4 = mysqli_fetch_all($result4, MYSQLI_ASSOC);
+  }
+  else{}
+}
+//print_r($choices);
+//echo $result;
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -58,87 +98,8 @@
     </ul>
   </div>
 </nav>
-<h1 class="st">YOUR INTERESTS...</h1>
-<div class="new">
-<div class="row">
-  <div class="column col-lg-4 col-sm-12 col-md-6">
-    <div class="c">
-    <img src="earring.jpg" alt="image" class="image" >
-     <div class="overlay"><div class="text1"><p><b>Product name : EARRINGS</b></p>
-     <p><b>Price : Rs.50</b></p>
-     <p><b>Number of items:<input type="number" min="1" max="100" name="noi" value="1"></b></p>
-     <p><b><?php echo $detail['description'];?> </b></p>
-     <input type="hidden" name="prod_name" value="<?php echo $detail['prod_name'];?>">
-     <input type="hidden" name="prod_price" value="<?php echo $detail['price'];?>">
-     <input type="hidden" name="org_name" value="<?php echo $detail['org_name'];?>">
-     <input type="hidden" name="cust_name" value="<?php echo $_SESSION['cust_name']; ?>">
-     <input type="hidden" name="cust_email" value="<?php echo $_SESSION['email'];?>">
-     <p><b>Seller name : ABC jewellery</b></p>
-     <p><b>Follow us on :  </b><a href="#"><img src="insta.jpg" height="50px" width="50px"></a></p>
-     <p><b>This is a black metal earring with </b></p>
-     <button class="add button1">+ ADD</button> </div>
-     </div>
-    </div>
-  </div>
-  <div class="column col-lg-4 col-sm-12 col-md-6">
-    <div class="c">
-    <img src="earring.jpg" alt="image" class="image">
-    <div class="overlay"><div class="text1"> DETAILS here</div>
-    </div>
-  </div>
-</div>
-  <div class="column col-lg-4 col-sm-12 col-md-6">
-    <div class="c">
-    <img src="earring.jpg" alt="image" class="image">
-   <div class="overlay"><div class="text1"> DETAILS here</div>
-   </div>
-  </div>
-  </div>
-  <div class="column col-lg-4 col-sm-12 col-md-6">
-    <div class="c">
-      <img src="earring.jpg" alt="image" class="image">
-   <div class="overlay"><div class="text1"> DETAILS here</div>
-   </div>
-  </div>
-</div>
-  <div class="column col-lg-4 col-sm-12 col-md-6">
-    <div class="c">
-    <img src="earring.jpg" alt="image" class="image" >
-     <div class="overlay"><div class="text1"> DETAILS here </div>
-    </div>
-  </div>
-</div>
- <div class="column col-lg-4 col-sm-12 col-md-6">
-    <div class="c">
-    <img src="earring.jpg" alt="image"  class="image">
-    <div class="overlay"><div class="text1"> DETAILS here</div>
-    </div>
-  </div>
-  </div>
-  <div class="column col-lg-4 col-sm-12 col-md-6">
-    <div class="c">
-  <img src="earring.jpg" alt="image"  class="image">
-   <div class="overlay"><div class="text1"> DETAILS here</div>
-   </div>
-  </div>
-  </div>
-  <div class="column col-lg-4 col-sm-12 col-md-6">
-    <div class="c">
-  <img src="earring.jpg" alt="image" class="image">
-   <div class="overlay">
-     <div class="text1"> DETAILS here</div>
-   </div>
-  </div>
-  </div>
-  <div class="column col-lg-4 col-sm-12 col-md-6">
-    <div class="c">
-  <img src="earring.jpg" alt="image"  class="image">
-   <div class="overlay"><div class="text1"> DETAILS here</div>
-   </div>
-  </div>
-</div>
-</div>
-</div>
+<h1 class="st" style="color:black;">YOUR INTERESTS...</h1>
+
 <?php include('footer.php') ?>
 </body>
 </html>
