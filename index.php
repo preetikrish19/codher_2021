@@ -36,10 +36,10 @@ body {
         <a class="nav-link" href="about.php">About <span class="sr-only">(current)</span></a>
       </li>
       <li>
-        <a class="nav-link" href="customer.php">Customer login<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="customer/customer.php">Customer login<span class="sr-only">(current)</span></a>
       </li>
       <li>
-        <a class="nav-link" href="organisation.php">Organisation login<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="organisation/organisation.php">Organisation login<span class="sr-only">(current)</span></a>
       </li>
       
       <li class="nav-item dropdown">
@@ -47,13 +47,13 @@ body {
           Categories
         </a>
         <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item bg-dark" href="access.php" style="color: white">ACCESSORIES</a>
+          <a class="dropdown-item bg-dark" href="customer/access.php" style="color: white">ACCESSORIES</a>
           <div class="dropdown-divider bg-light"></div>
-          <a class="dropdown-item bg-dark" href="han.php" style="color: white">HANDICRAFTS</a>
+          <a class="dropdown-item bg-dark" href="customer/han.php" style="color: white">HANDICRAFTS</a>
           <div class="dropdown-divider bg-light"></div>
-          <a class="dropdown-item bg-dark" href="clo.php" style="color: white">CLOTHING</a>
+          <a class="dropdown-item bg-dark" href="customer/clo.php" style="color: white">CLOTHING</a>
           <div class="dropdown-divider bg-light"></div>
-          <a class="dropdown-item bg-dark" href="sec.php" style="color: white">SECOND HAND BOOKS</a>
+          <a class="dropdown-item bg-dark" href="customer/sec.php" style="color: white">SECOND HAND BOOKS</a>
         </div>
       </li>
       <li>
@@ -65,3 +65,5 @@ body {
     </ul>
   </div>
 </nav>
+</body>
+</html>
