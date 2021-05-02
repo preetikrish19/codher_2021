@@ -22,6 +22,7 @@ $i =1;
 table, th, td {
   border: 3px solid black;
   border-collapse: collapse;
+  align:center;
 }
 th, td {
   padding: 5px;
