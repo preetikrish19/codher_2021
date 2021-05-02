@@ -96,7 +96,7 @@ $("form").on("submit", function(event){
         <a class="nav-link" href="orders.php">Orders<span class="sr-only">(current)</span></a>
       </li>
       <li>
-        <a class="nav-link" href="">Log out <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="../index.php">Log out <span class="sr-only">(current)</span></a>
       </li>
     </ul>
   </div>
