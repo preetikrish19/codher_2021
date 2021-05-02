@@ -56,7 +56,7 @@ $details = mysqli_fetch_all($result, MYSQLI_ASSOC);
         <a class="nav-link" href="cart.php">Cart<i class="fas fa-shopping-cart"></i><span class="sr-only">(current)</span></a>
       </li>
       <li>
-        <a class="nav-link" href="#">Log out <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="../index.php">Log out <span class="sr-only">(current)</span></a>
       </li>
     </ul>
   </div>
