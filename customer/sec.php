@@ -32,7 +32,7 @@ $(document).ready(function(){
           $("#result").html(data);
       });
   });
-  $("#chatbox").on("submit", function(event){
+  $(".chatbox").on("submit", function(event){
       event.preventDefault();
 
       var formValues= $(this).serialize();
@@ -144,7 +144,7 @@ $(document).ready(function(){
            <div><?php echo $detail2['comment'];?></div>
          <?php } ?>
 
-          <form id="chatbox" action="chat.php" method="post">
+          <form class="chatbox" action="chat.php" method="post">
             <input type="hidden" name="org_name" value="<?php echo $_SESSION['org_name'];?>">
             <textarea name="msg" rows="3" cols="55"></textarea>
             <input type="submit" class="btn btn-primary" value="SEND">
