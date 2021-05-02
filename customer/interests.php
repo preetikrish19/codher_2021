@@ -170,6 +170,36 @@ foreach ($details2 as $detail2){
 $i =$i+1;
 }
 $i=1;
+  foreach ($details3 as $detail3){
+    if($i == 4)
+    {
+      break;
+    }
+    else{
+  ?>
+  <div class="column col-lg-4 col-sm-12 col-md-6">
+    <div class="c">
+    <img src="../imgs/<?php echo $detail3['image'];?>" alt="image" class="image">
+     <div class="overlay"><div class="text1"><p><b>Product name : <?php echo $detail3['prod_name'];?></b></p>
+     <p><b>Price : Rs.<?php echo $detail3['price'];?></b></p>
+     <p><b>Number of items:<input type="number" min="1" max="100" name="noi" value="1"></b></p>
+     <p><b><?php echo $detail3['description'];?> </b></p>
+     <input type="hidden" name="prod_name" value="<?php echo $detail3['prod_name'];?>">
+     <input type="hidden" name="prod_price" value="<?php echo $detail3['price'];?>">
+     <input type="hidden" name="org_name" value="<?php echo $detail3['org_name'];?>">
+     <input type="hidden" name="cust_name" value="<?php echo $_SESSION['cust_name']; ?>">
+     <input type="hidden" name="cust_email" value="<?php echo $_SESSION['email'];?>">
+     <p><b>Seller name : <?php echo $detail3['org_name'];?></b></p>
+     <p><b>Follow us on :  </b><a href="#"><img src="insta.jpg" height="50px" width="50px"></a></p>
+     <p><b><?php echo $detail3['description'];?></b></p>
+     <button class="add button1">+ ADD</button></div>
+     </div>
+    </div>
+  </div>
+  <?php }
+  $i =$i+1;
+  }
+  $i=1;
 ?>
 </div>
 </div>
