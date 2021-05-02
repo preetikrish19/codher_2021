@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>HELP A HAND| Home</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="old.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -33,7 +34,7 @@ body {
         <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
       </li>
       <li>
-        <a class="nav-link" href="about.php">About <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#about">About <span class="sr-only">(current)</span></a>
       </li>
       <li>
         <a class="nav-link" href="customer/customer.php">Customer login<span class="sr-only">(current)</span></a>
