@@ -36,32 +36,13 @@ body {
         <a class="nav-link" href="about.php">About <span class="sr-only">(current)</span></a>
       </li>
       <li>
-        <a class="nav-link" href="customer.php">Customer login<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="customer/customer.php">Customer login<span class="sr-only">(current)</span></a>
       </li>
       <li>
-        <a class="nav-link" href="organisation.php">Organisation login<span class="sr-only">(current)</span></a>
-      </li>
-      
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Categories
-        </a>
-        <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item bg-dark" href="access.php" style="color: white">ACCESSORIES</a>
-          <div class="dropdown-divider bg-light"></div>
-          <a class="dropdown-item bg-dark" href="han.php" style="color: white">HANDICRAFTS</a>
-          <div class="dropdown-divider bg-light"></div>
-          <a class="dropdown-item bg-dark" href="clo.php" style="color: white">CLOTHING</a>
-          <div class="dropdown-divider bg-light"></div>
-          <a class="dropdown-item bg-dark" href="sec.php" style="color: white">SECOND HAND BOOKS</a>
-        </div>
-      </li>
-      <li>
-        <a class="nav-link" href="cart.php">Cart<i class="fas fa-shopping-cart"></i><span class="sr-only">(current)</span></a>
-      </li>
-      <li>
-        <a class="nav-link" href="#">Log out <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="organisation/organisation.php">Organisation login<span class="sr-only">(current)</span></a>
       </li>
     </ul>
   </div>
 </nav>
+</body>
+</html>

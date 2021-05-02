@@ -42,7 +42,7 @@ ul li{
   </ul>
 
   <div class="footer-copyright text-center py-3">© 2021 Copyright:
-    <a href="#"> Website.com</a>
+    <a href="#"> HelpAHand.com</a>
   </div>
   <!-- Footer Elements -->
 </div>
