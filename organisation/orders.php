@@ -88,10 +88,10 @@ $(document).ready(function(){
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
       </li>
       <li>
-        <a class="nav-link" href="#">About <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="index.php#about">About <span class="sr-only">(current)</span></a>
       </li>
       <li>
         <a class="nav-link" href="org_posts.php">Posts<span class="sr-only">(current)</span></a>
