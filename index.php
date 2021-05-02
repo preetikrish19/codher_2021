@@ -16,7 +16,7 @@ session_start();
 <body class = "bg-dark">
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#"><img src= "..imgs/logo.jpeg" alt="logo"style="width:80px;height:50px"></a>
+  <a class="navbar-brand" href="#"><img src= "imgs/logo.jpeg" alt="logo"style="width:80px;height:50px"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -48,7 +48,7 @@ session_start();
   </ul>
 <div class="carousel-inner">
     <div class="carousel-item active">
-      <!--<img src="../imgs/homeimg2.jpg" alt="Los Angeles">-->
+      <img src="imgs/home.png" alt="Los Angeles">
       <div class="carousel-caption">
         <h3>Buy what you don’t have yet or what you really want,</h3>
         <h3>which can be mixed with what you already own. Buy only because something</h3>
