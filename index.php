@@ -41,9 +41,6 @@ body {
       <li>
         <a class="nav-link" href="organisation/organisation.php">Organisation login<span class="sr-only">(current)</span></a>
       </li>
-      <li>
-        <a class="nav-link" href="#">Log out <span class="sr-only">(current)</span></a>
-      </li>
     </ul>
   </div>
 </nav>
