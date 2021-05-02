@@ -104,6 +104,9 @@ input[type=submit]:hover {
           <a class="nav-link" href="orders.php">Orders<span class="sr-only">(current)</span></a>
         </li>
         <li>
+          <a class="nav-link" href="chatpage.php">Chat<span class="sr-only">(current)</span></a>
+        </li>
+        <li>
           <a class="nav-link" href="#">Log out <span class="sr-only">(current)</span></a>
         </li>
       </ul>
