@@ -79,7 +79,7 @@ foreach ($choices as $choice) {
         <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
       </li>
       <li>
-        <a class="nav-link" href="about.php">About <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="index.php#about">About <span class="sr-only">(current)</span></a>
       </li>
       <li>
         <a class="nav-link active" href="customer/interests.php">Interests <span class="sr-only">(current)</span></a>

@@ -14,7 +14,6 @@ $details = mysqli_fetch_all($result, MYSQLI_ASSOC);
 <link rel="stylesheet" href="old.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
-
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
@@ -23,7 +22,7 @@ $details = mysqli_fetch_all($result, MYSQLI_ASSOC);
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-<a class="navbar-brand" href="#"><img src= "../imgs/logo.png" alt="logo"style="width:80px;height:50px"></a>
+<a class="navbar-brand" href="#"><img src= "imgs/logo.jpeg" alt="logo"style="width:80px;height:50px"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -31,10 +30,10 @@ $details = mysqli_fetch_all($result, MYSQLI_ASSOC);
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
       </li>
       <li>
-        <a class="nav-link" href="#">About <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="index.php#about">About <span class="sr-only">(current)</span></a>
       </li>
       <li>
         <a class="nav-link" href="interests.php">Interests <span class="sr-only">(current)</span></a>
