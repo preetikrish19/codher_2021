@@ -25,8 +25,8 @@ table, th, td {
   align:center;
 }
 th, td {
-  padding: 5px;
-  text-align: left;
+  padding: 0.3em;
+  text-align: center;
 }
 .button {
   background-color: #4CAF50; /* Green */
@@ -54,9 +54,9 @@ th, td {
 }
 .t
 {
-    width:70%;
-    margin-top:3%;
-    margin-left:15%;
+    width:10em;
+    margin-top:3em;
+    margin-left:3em;
 }
 .b{
     text-align:center;
