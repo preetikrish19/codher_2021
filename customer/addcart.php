@@ -23,8 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $sql = "INSERT INTO cart (cust_name, org_name, prod_name, price, quantity, cust_email) VALUES ('$cust_name', '$orgname', '$prodname', '$price', '$noi', '$cust_email')";
   if($con->query($sql))
   {
-    echo "Added ".$prodname." to cart";
-    //echo "<script>alert('Posted');</script>";
+    //echo "Added ".$prodname." to cart";
+    echo "<script>alert('Added ".$prodname." to cart');</script>";
     //echo "<script>window.location.href='cart.php'</script>";
   }
   else{

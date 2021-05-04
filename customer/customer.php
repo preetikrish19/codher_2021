@@ -181,7 +181,7 @@
           <input type="password" placeholder="Password" class="form-control" name="password" required><br/>
           <h4>Bank details</h4>
           <input type="text" placeholder="Account Number"  class="form-control" name="account" required><br />
-          <input type="text" placeholder="Expiry date" name="cvv" class="form-control" required><br />
+          <input type="text" placeholder="Expiry date(dd/mm/yyyy)" name="cvv" class="form-control" required><br />
           <h4>Interests</h4>
           <label for="domain" class="form-control">Interested in</label>
           <input type="hidden" name="domain" value="0">

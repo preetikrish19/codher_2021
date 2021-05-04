@@ -124,7 +124,6 @@ $("form").on("submit", function(event){
   view message
 </button></td>
   </tr>
- </table>
 <!-- Modal -->
 <div class="modal fade" id="chat<?php echo $i;?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -160,7 +159,10 @@ $("form").on("submit", function(event){
     </div>
   </div>
 </div>
-<?php } ?>
+<?php
+$i++;
+} ?>
+</table>
 </body>
 
 </html>
